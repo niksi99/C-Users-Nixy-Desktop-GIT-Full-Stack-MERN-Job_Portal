@@ -31,11 +31,11 @@ UserSchema.pre('save', async function(next) {
     if(!this.isModified('Password'))
         next();
 
-    this.Password = await bcrypt(this.Password, 10);
+    this.Password = await bcrypt.hash(this.Password, 10);
 })
 
 UserSchema.methods.GenerateJWT = function() {
-    jwt.sign(
+    return jwt.sign(
         { email: this.Email, role: this.Role },
         process.env.JWT_SECRET,
         { expiresIn: 900 }
