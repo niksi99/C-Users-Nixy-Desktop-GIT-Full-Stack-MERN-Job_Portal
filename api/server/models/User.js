@@ -42,4 +42,8 @@ UserSchema.methods.GenerateJWT = function() {
     )
 }
 
+UserSchema.methods.ComparePasswords = async function(PasswordForChecking) {
+    return await bcrypt.compare(PasswordForChecking, this.Password);
+}
+
 module.exports = mongoose.model("User", UserSchema);
