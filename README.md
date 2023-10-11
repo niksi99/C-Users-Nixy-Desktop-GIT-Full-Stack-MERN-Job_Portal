@@ -1,1 +1,1 @@
-# C-Users-Nixy-Desktop-GIT-Full-Stack-MERN-Job_Portal
+# Full-Stack-MERN-Job_Portal
