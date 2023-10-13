@@ -91,12 +91,3 @@ module.exports.Login = async (req, res) => {
         })
     }
 }   
-
-module.exports.UserProfile = async (req, res) => {
-    const userProfile = await User.findById(req.user.id);
-    
-    res.json({
-        success: true,
-        userProfile
-    })
-}

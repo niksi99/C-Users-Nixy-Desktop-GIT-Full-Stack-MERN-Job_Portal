@@ -36,7 +36,7 @@ UserSchema.pre('save', async function(next) {
 
 UserSchema.methods.GenerateJWT = function() {
     return jwt.sign(
-        { email: this.Email, role: this.Role },
+        { id: this.id, email: this.Email, role: this.Role },
         process.env.JWT_SECRET,
         { expiresIn: 900 }
     )

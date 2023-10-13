@@ -6,8 +6,5 @@ const AuthMiddleware = require('../middlewares/AuthMiddleware')
 
 router.post("/register", AuthController.Register)
 router.post("/login", AuthController.Login);
-
-router.get("/userProfile", 
-    AuthMiddleware.IsAuthenticated,
-    AuthController.UserProfile);
+  
 module.exports = router;

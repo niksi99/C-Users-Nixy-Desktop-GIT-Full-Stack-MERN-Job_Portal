@@ -15,8 +15,10 @@ app.use(body_parser.json());
 app.use(cookie_parser());
 
 const AuthRoute = require('./server/routes/AuthRoute')
+const UserRoute = require('./server/routes/UserRoute')
 
 app.use('/api/auth', AuthRoute);
+app.use('/api/user', UserRoute);
 
 const port = process.env.PORT || 3001
 
